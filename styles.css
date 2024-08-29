@@ -7,7 +7,7 @@ body {
 
 /* Header and Navigation */
 header {
-  background-color: #333;
+  background-color: #758694;
   color: #fff;
   padding: 1rem;
 }
@@ -52,7 +52,7 @@ nav a:hover {
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  animation: float 6s ease-in-out infinite;
+  animation: float 7s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -103,7 +103,7 @@ nav a:hover {
 /* Projects Section */
 .projects {
   padding: 4rem;
-  background-color: #f1f1f1;
+  background-color: #fff;
 }
 
 .project-grid {
@@ -171,7 +171,23 @@ nav a:hover {
   gap: 2rem;
 }
 
-.contact-link {
+.contact-link-instagram {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-link-github {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-link-twiter {
   display: flex;
   align-items: center;
   color: #333;
@@ -183,10 +199,17 @@ nav a:hover {
   margin-right: 0.5rem;
 }
 
-.contact-link:hover {
-  color: #4caf50;
+.contact-link-instagram:hover {
+  color: #da0c81;
 }
 
+.contact-link-twiter:hover {
+  color: #4477ce;
+}
+
+.contact-link-github:hover {
+  color: #31363f;
+}
 /* Call-to-Action Button */
 .cta-button {
   display: inline-block;
@@ -200,12 +223,98 @@ nav a:hover {
 }
 
 .cta-button:hover {
-  background-color: #03346E;
+  background-color: #76abae;
+}
+
+.skills {
+  /* Style the skills section */
+  margin-top: 40px;
+  text-align: center;
+  padding: 4rem;
+  background-color: #f1f1f1;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.skills {
+  /* Style the skills section */
+  margin-top: 40px;
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.skill-card {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  height: 150px;
+  position: relative;
+}
+
+.skill-icon-html {
+  font-size: 30px;
+  color: #f97300; /* Adjust the icon color */
+  margin-bottom: 10px;
+}
+
+.skill-icon-css {
+  font-size: 30px;
+  color: #007bff; /* Adjust the icon color */
+  margin-bottom: 10px;
+}
+.skill-icon-js {
+  font-size: 30px;
+  color: #ffdb00; /* Adjust the icon color */
+  margin-bottom: 10px;
+}
+.skill-name {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.skill-bar {
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Your existing CSS styles */
+
+.skill-fill {
+  height: 100%;
+  background-image: linear-gradient(to right, #4caf50, #8bc34a);
+  transition: width 1s ease-in-out; /* Adjust the transition duration as needed */
+  border-radius: 10px 0px 0px 10px;
+  width: 0%;
+}
+.skill-percentage {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  font-weight: bold;
+  color: #fff;
 }
 
 /* Footer */
 footer {
-  background-color: #333;
+  background-color: #758694;
   color: #fff;
   padding: 1px;
   text-align: center;

@@ -9,93 +9,217 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#project">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
+        <section id="home" class="hero">
             <div class="hero-content">
-                <h1>Welcome to My Portfolio</h1>
+                <h1 id="dynamic-text"></h1>
                 <p>Discover my latest projects and learn more about me.</p>
-                <a href="#" class="cta-button">Explore Now</a>
+                <a href="https://github.com/KyuuraCao" class="cta-button">Explore Now</a>
             </div>
             <div class="hero-image">
                 <img src="hero-image.jpg" alt="Hero Image">
             </div>
         </section>
+    </main>
 
-        <section class="about">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="about-image.jpg" alt="About Image">
-                </div>
-                <div class="about-text">
-                    <p>Hi, I'm [Your Name], a passionate [Your Profession]. I have experience in [Your Skills] and I'm
-                        dedicated to creating innovative solutions for my clients.</p>
-                    <a href="#" class="cta-button">Learn More</a>
-                </div>
+    <style>
+        #dynamic-text {
+            font-family: "Montserrat", Arial, sans-serif;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+            animation: blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from {
+                border-color: transparent;
+            }
+
+            to {
+                border-color: #333;
+            }
+        }
+    </style>
+
+    <script>
+        const text = "Welcome to My Portfolio";
+        const typingSpeed = 100; // Speed of typing in milliseconds
+        const erasingSpeed = 50; // Speed of erasing in milliseconds
+        const delayBetween = 1500; // Delay between typing and erasing
+        let i = 0;
+        let isErasing = false;
+
+        function typeAndErase() {
+            const dynamicText = document.getElementById("dynamic-text");
+
+            if (!isErasing && i < text.length) {
+                // Typing
+                dynamicText.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeAndErase, typingSpeed);
+            } else if (isErasing && i > 0) {
+                // Erasing
+                dynamicText.textContent = text.substring(0, i - 1);
+                i--;
+                setTimeout(typeAndErase, erasingSpeed);
+            } else if (!isErasing && i === text.length) {
+                // Pause before erasing
+                isErasing = true;
+                setTimeout(typeAndErase, delayBetween);
+            } else if (isErasing && i === 0) {
+                // Pause before typing again
+                isErasing = false;
+                setTimeout(typeAndErase, delayBetween);
+            }
+        }
+
+        // Start typing effect when the page loads
+        window.onload = function () {
+            typeAndErase();
+        };
+    </script>
+
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="about-image.jpg" alt="About Image">
             </div>
-        </section>
+            <div class="about-text">
+                <p>Hi, I'm Oswald Willybald Sitanggang , a passionate Web Developer and Web Designer. I have experience
+                    in Designing Website and I'm
+                    dedicated to creating innovative solutions for my clients.</p>
+            </div>
+        </div>
+    </section>
 
-        <section class="projects">
-            <h2>My Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="project1.png" alt="Project 1">
-                        <div class="project-description">
-                            <h3>Project 1</h3>
-                            <p>Description of Project 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <a href="#" class="cta-button">View Project</a>
-                        </div>
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skills-content">
+            <div class="card-container">
+                <div class="skill-card">
+                    <div class="skill-icon-html"><i class="fab fa-html5"></i></div>
+                    <div class="skill-name">HTML</div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-percent="78"></div>
+                        <div class="skill-percentage">78%</div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="project2.png" alt="Project 2">
-                        <div class="project-description">
-                            <h3>Project 2</h3>
-                            <p>Description of Project 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <a href="#" class="cta-button">View Project</a>
-                        </div>
+                <div class="skill-card">
+                    <div class="skill-icon-css"><i class="fab fa-css3-alt"></i></div>
+                    <div class="skill-name">CSS</div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-percent="80"></div>
+                        <div class="skill-percentage">80%</div>
                     </div>
                 </div>
-                <!-- Add more project cards as needed -->
+                <div class="skill-card">
+                    <div class="skill-icon-js"><i class="fa-brands fa-js"></i></div>
+                    <div class="skill-name">JAVASCRIPT</div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-percent="65"></div>
+                        <div class="skill-percentage">65%</div>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="contact">
-            <h2>Contact Me</h2>
-            <div class="contact-info">
-                <a href="https://www.instagram.com/yourusername" class="contact-link">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-                <a href="https://twitter.com/yourusername" class="contact-link">
-                    <i class="fab fa-twitter"></i> Twitter
-                </a>
-                <!-- Add more contact information as needed -->
+    </section>
+
+    <section id="project" class="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="image.png" alt="Project 1">
+                    <div class="project-description">
+                        <h3>Project 1</h3>
+                        <p>Description of Project 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <a href="#" class="cta-button">View Project</a>
+                    </div>
+                </div>
             </div>
-        </section>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="hanni.png" alt="Project 2">
+                    <div class="project-description">
+                        <h3>Project 2</h3>
+                        <p>Description of Project 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <a href="#" class="cta-button">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="project2.png" alt="Project 2">
+                    <div class="project-description">
+                        <h3>Project 2</h3>
+                        <p>Description of Project 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <a href="#" class="cta-button">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="haerin.png" alt="Project 2">
+                    <div class="project-description">
+                        <h3>Project 2</h3>
+                        <p>Description of Project 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <a href="#" class="cta-button">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more project cards as needed -->
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-info">
+            <a href="https://www.instagram.com/oyu_kyuu" class="contact-link-instagram">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://twitter.com/KyuuRaCaoo" class="contact-link-twiter">
+                <i class="fab fa-twitter"></i> Twitter
+            </a>
+            <a href="https://github.com/KyuuraCao" class="contact-link-github">
+                <i class="fab fa-github"></i>Github
+            </a>
+            <!-- Add more contact information as needed -->
+        </div>
+    </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 [Your Name]. All rights reserved.</p>
+        <p>&copy; 2024 KyuuRaCaoo. All rights reserved.</p>
     </footer>
 
     <!-- Add Font Awesome script for icons -->
     <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
