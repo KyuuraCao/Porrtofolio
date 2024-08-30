@@ -12,10 +12,14 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dark-theme.css">
 
 </head>
 
 <body>
+    <button id="darkModeToggle" class="dark-mode-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
     <header>
         <nav>
             <ul>
@@ -222,6 +226,27 @@
     <!-- Add Font Awesome script for icons -->
     <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        function setDarkMode(isDark) {
+            body.classList.toggle('dark-mode', isDark);
+            darkModeToggle.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+            localStorage.setItem('darkMode', isDark ? 'enabled' : null);
+        }
+
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            setDarkMode(true);
+        } else {
+            setDarkMode(false);
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            setDarkMode(!body.classList.contains('dark-mode'));
+        });
+    </script>
 </body>
 
 </html>

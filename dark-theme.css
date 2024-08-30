@@ -1,0 +1,103 @@
+/* Dark theme styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode header {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode nav ul li a {
+  color: #e0e0e0;
+}
+
+body.dark-mode .hero {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .contact-link-github:hover {
+  color: #fefaf6;
+}
+
+body.dark-mode #dynamic-text {
+  color: #e0e0e0;
+}
+
+body.dark-mode .cta-button {
+  background-color: #bb86fc;
+  color: #121212;
+}
+
+body.dark-mode .about,
+body.dark-mode .skills,
+body.dark-mode .projects,
+body.dark-mode .contact {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .skill-card {
+  background-color: #2c2c2c;
+}
+
+body.dark-mode .project-card {
+  background-color: #2c2c2c;
+}
+
+body.dark-mode footer {
+  background-color: #1e1e1e;
+}
+
+/* ... (previous dark theme styles remain the same) ... */
+
+/* Cute Dark mode toggle button */
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #ffd700;
+  color: #ff8c00;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+}
+
+body.dark-mode .dark-mode-toggle {
+  background-color: #483d8b;
+  color: #e6e6fa;
+  box-shadow: 0 0 10px rgba(72, 61, 139, 0.5);
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+  box-shadow: 0 0 15px rgba(72, 61, 139, 0.7);
+}
+
+/* Add a transition effect for smooth theme change */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header,
+.hero,
+.about,
+.skills,
+.projects,
+.contact,
+footer {
+  transition: background-color 0.3s ease;
+}
