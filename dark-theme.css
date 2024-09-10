@@ -94,7 +94,6 @@ body {
 
 /* Add a new class for the background animation */
 body.dark-mode .skills-background {
-  background-image: url("thumbs-up.png  "); /* Replace with your desired image */
   background-size: cover;
   background-position: center;
   animation: background-animation 10s linear infinite;

@@ -7,8 +7,9 @@ body {
 
 /* Header and Navigation */
 header {
-  background-color: #758694;
+  background-color: #F5F7F8;
   color: #fff;
+  box-shadow: 0px 10px -14px 14px #FFF;
   padding: 1rem;
 }
 
@@ -20,7 +21,7 @@ nav ul {
 }
 
 nav a {
-  color: #fff;
+  color: #33372C;
   text-decoration: none;
   transition: color 0.3s ease;
 }
