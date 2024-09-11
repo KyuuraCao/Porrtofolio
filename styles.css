@@ -7,9 +7,11 @@ body {
 
 /* Header and Navigation */
 header {
-  background-color: #F5F7F8;
+  background-color: #f5f7f8;
   color: #fff;
-  box-shadow: 0px 10px -14px 14px #FFF;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
   padding: 1rem;
 }
 
@@ -21,7 +23,7 @@ nav ul {
 }
 
 nav a {
-  color: #33372C;
+  color: #33372c;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -121,7 +123,7 @@ nav a:hover {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
 
@@ -290,7 +292,7 @@ nav a:hover {
 
 .skill-icon-php {
   font-size: 30px;
-  color: #0C359E; /* Adjust the icon color */
+  color: #0c359e; /* Adjust the icon color */
   margin-bottom: 10px;
 }
 .skill-name {
@@ -323,7 +325,6 @@ nav a:hover {
   font-weight: bold;
   color: #fff;
 }
-
 
 /* Footer */
 footer {
