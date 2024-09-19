@@ -13,6 +13,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="dark-theme.css">
+    <link rel="stylesheet" href="certifications.css">
 
 </head>
 
@@ -26,6 +27,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#project">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -160,6 +162,30 @@
         </div>
     </section>
 
+    <section id="certifications" class="certifications">
+        <h2>Certifications</h2>
+        <div class="certification-grid">
+            <a href="#" class="certification-card" data-image="certi/BNSP.jpeg">
+                <div class="certification-icon"><i class="fas fa-certificate"></i></div>
+                <h3>Junior Web Developer</h3>
+                <p>BNSP</p>
+                <p>Date: 3 December 2022</p>
+            </a>
+            <a href="#" class="certification-card" data-image="certi/google.jpeg">
+                <div class="certification-icon"><i class="fas fa-award"></i></div>
+                <h3>Google for Education</h3>
+                <p>Issued by: Google</p>
+                <p>Date: October 2022</p>
+            </a>
+            <a href="#" class="certification-card" data-image="certi/TPCC.jpeg">
+                <div class="certification-icon"><i class="fas fa-medal"></i></div>
+                <h3>Web Developer Training</h3>
+                <p>Issued by: TPCC</p>
+                <p>Date: June 2023</p>
+            </a>
+        </div>
+    </section>
+
     </section>
 
     <section id="project" class="projects">
@@ -256,6 +282,66 @@
             setDarkMode(!body.classList.contains('dark-mode'));
         });
     </script>
+
+    <!-- Add this modal HTML at the end of your body tag -->
+    <div id="certModal" class="cert-modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="certImage">
+    </div>
+
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("certModal");
+
+        // Get the image and insert it inside the modal
+        var modalImg = document.getElementById("certImage");
+
+        // Get all certification cards
+        var cards = document.getElementsByClassName("certification-card");
+
+        // Function to adjust image size
+        function adjustImageSize() {
+            var maxWidth = window.innerWidth * 0.9;
+            var maxHeight = window.innerHeight * 0.9;
+            var imgWidth = modalImg.naturalWidth;
+            var imgHeight = modalImg.naturalHeight;
+
+            var ratio = Math.min(maxWidth / imgWidth, maxHeight / imgHeight);
+
+            modalImg.style.width = (imgWidth * ratio) + 'px';
+            modalImg.style.height = (imgHeight * ratio) + 'px';
+        }
+
+        // Attach click event to each card
+        Array.from(cards).forEach(card => {
+            card.onclick = function (e) {
+                e.preventDefault();
+                modal.style.display = "block";
+                modalImg.src = this.getAttribute('data-image');
+                modalImg.onload = adjustImageSize;
+            }
+        });
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Adjust image size when window is resized
+        window.addEventListener('resize', adjustImageSize);
+    </script>
+
 </body>
 
 </html>

@@ -5,7 +5,7 @@ body.dark-mode {
 }
 
 body.dark-mode header {
-  background-color: #45474B;
+  background-color: #45474b;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -118,4 +118,44 @@ header,
 .contact,
 footer {
   transition: background-color 0.3s ease;
+}
+
+.dark-mode .certifications {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.dark-mode .certification-card {
+  background-color: #2a2a2a;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .certification-card:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .certification-icon {
+  color: #909090;
+}
+
+.dark-mode .certification-card h3 {
+  color: #ffffff;
+}
+
+.dark-mode .certification-card p {
+  color: #b0b0b0;
+}
+
+/* Dark mode styles for the modal */
+.dark-mode .cert-modal {
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+.dark-mode .close {
+  color: #ffffff;
+}
+
+.dark-mode .close:hover,
+.dark-mode .close:focus {
+  color: #b0b0b0;
 }
